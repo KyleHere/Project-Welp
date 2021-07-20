@@ -32,17 +32,17 @@ app.use(
       httpOnly: true,
     },
   })
-  );
+);
 
-  app.use(routes)
+app.use(routes)
 
-  app.use((_req, _res, next) => {
-    const err = new Error("The requested resource couldn't be found.");
-    err.title = "Resource Not Found";
-    err.errors = ["The requested resource couldn't be found."];
-    err.status = 404;
-    next(err);
-  });
+app.use((_req, _res, next) => {
+  const err = new Error("The requested resource couldn't be found.");
+  err.title = "Resource Not Found";
+  err.errors = ["The requested resource couldn't be found."];
+  err.status = 404;
+  next(err);
+});
 
 app.use((err, _req, _res, next) => {
   if (err instanceof ValidationError) {
@@ -63,4 +63,4 @@ app.use((err, _req, res, _next) => {
   });
 });
 
-  module.exports = app;
+module.exports = app;
