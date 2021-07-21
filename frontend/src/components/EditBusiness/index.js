@@ -12,6 +12,7 @@ function EditBusinessForm({ id, setShowEditBusiness }) {
   const sessionUser = useSelector(state => state?.session?.user);
   const ownerId = useSelector(state => state?.businesses[id]?.ownerId);
   const business = useSelector((state) => state?.businesses[id])
+  console.log(businessId, "THIS IS BUSINESS ID")
 
   const [title, setTitle] = useState(business?.title);
   const [description, setDescription] = useState(business?.description);
