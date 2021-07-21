@@ -1,11 +1,11 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
-import styles from './Navigation.module.css';
+import './Navigation.css';
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
@@ -15,24 +15,41 @@ function Navigation({ isLoaded }){
     );
   } else {
     sessionLinks = (
-      <>
+      <div className="sessionButtons">
         <LoginFormModal />
-        <NavLink to="/signup">Sign Up</NavLink>
-      </>
+        <Link to="/signup">
+          <button>Sign Up</button>
+        </Link>
+      </div>
     );
   }
 
   return (
-    <div className={styles.navbar}>
-      <ul>
-        <li>
-          <NavLink exact to="/">Home</NavLink>
-        </li>
-      </ul>
-      <div>
-        {isLoaded && sessionLinks}
-      </div>
-    </div>
+    <div className='navbarContainer'>
+      <div className='navbar'>
+        <div className='leftNavbar'>
+          <image src='frontend/src/images/logo.png'></image>
+          <div className='logo' background>
+            <img className='logoImage' src='https://i.imgur.com/SjdX5ZR.png'></img>
+            <h4 className='logoText'>Welp</h4>
+
+          </div>
+          <div className='navbarLinks'>
+            <NavLink exact to="/" style={{ textDecoration: 'none' }}>Home</NavLink>
+          </div>
+          <div className='navbarLinks'>
+            <NavLink to="/businesses" style={{ textDecoration: 'none' }}>Shops</NavLink>
+          </div>
+        </div>
+        <div className='tagline'>
+          {/* Will be replaced by search bar later */}
+          Time for a coffee break
+        </div>
+        <div className='rightNavbar'>
+          {isLoaded && sessionLinks}
+        </div>
+      </div >
+    </div >
   );
 }
 
