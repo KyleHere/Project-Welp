@@ -1,6 +1,21 @@
-import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+
+import { getBusinesses } from '../../store/business';
+import './BusinessCard.css'
 
 function BusinessCard({ business }) {
+  const { businessId } = useParams();
+  const dispatch = useDispatch();
+  // const business = useSelector(state => {
+  //   return state.business.list.map(businessId => state.business[businessId])
+  // })
+
+  // useEffect(()=> {
+  //   dispatch(getBusinesses())
+  // },[])
 
   return (
     <div className='businessCardContainer'>
