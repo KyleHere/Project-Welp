@@ -5,7 +5,7 @@ import ProfileButton from './ProfileButton';
 import LoginFormModal from '../LoginFormModal';
 import './Navigation.css';
 
-function Navigation({ isLoaded }){
+function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
@@ -16,10 +16,10 @@ function Navigation({ isLoaded }){
   } else {
     sessionLinks = (
       <div className="sessionButtons">
-          <LoginFormModal />
-          <Link to="/signup">
-            <button>Sign Up</button>
-          </Link>
+        <LoginFormModal />
+        <Link to="/signup">
+          <button>Sign Up</button>
+        </Link>
       </div>
     );
   }
@@ -35,21 +35,21 @@ function Navigation({ isLoaded }){
 
           </div>
           <div className='navbarLinks'>
-            <NavLink exact to="/" style={{textDecoration: 'none'}}>Home</NavLink>
+            <NavLink exact to="/" style={{ textDecoration: 'none' }}>Home</NavLink>
           </div>
           <div className='navbarLinks'>
-            <NavLink to="/businesses" style={{textDecoration: 'none'}}>Shops</NavLink>
+            <NavLink to="/businesses" style={{ textDecoration: 'none' }}>Shops</NavLink>
           </div>
         </div>
         <div className='tagline'>
-        {/* Will be replaced by search bar later */}
+          {/* Will be replaced by search bar later */}
           Time for a coffee break
         </div>
         <div className='rightNavbar'>
           {isLoaded && sessionLinks}
         </div>
-      </div>
-    </div>
+      </div >
+    </div >
   );
 }
 

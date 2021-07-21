@@ -15,7 +15,6 @@ router.get('/:id', asyncHandler(async (req, res) => {
   return res.json(oneBusiness);
 }))
 
-
 router.post('/', asyncHandler(async function (req, res) {
   const data = req.body;
   const business = await Business.create(data)
@@ -28,7 +27,6 @@ router.post('/', asyncHandler(async function (req, res) {
 
 router.put('/:id', asyncHandler(async function (req, res) {
   const id = req.body.id
-
   delete req.body.id;
 
   await Business.update(req.body,
@@ -36,7 +34,6 @@ router.put('/:id', asyncHandler(async function (req, res) {
   )
 
   const business = await Business.findByPk(id)
-
   return res.json(business)
 }))
 
