@@ -79,26 +79,20 @@ export const editBusiness = (business) => async dispatch => {
   }
 }
 
+//Deleting a specific business
 export const deleteBusiness = (id) => async dispatch => {
   const res = await csrfFetch(`/api/businesses/${id}`, {
     method: 'DELETE',
   });
 
   if (res.ok) {
-    const businessDeleted = await res.json();
-    dispatch(deleteOneBusiness({ id: id }))
-
-    return businessDeleted
+    dispatch(deleteOneBusiness(id))
+    return res;
   }
-  // return null;
 }
 
-const startingState = {
-
-};
-
-const businessesReducer = (state = startingState, action) => {
-
+const businessesReducer = (state = {}, action) => {
+  // let afterState;
   switch (action.type) {
     case LOAD_BUSINESSES: {
       const allBusinesses = {};
@@ -126,9 +120,10 @@ const businessesReducer = (state = startingState, action) => {
     }
 
     case DELETE_ONE: {
-      const afterState = {};
-      afterState = { ...state };
-      delete afterState.businesses[action.id]
+      console.log('DELETE ONE CASE HIT')
+      let afterState = { ...state };
+      console.log(afterState, 'THIS IS THE AFTERSTATE')
+      delete afterState[action.id]
       return afterState;
     }
 

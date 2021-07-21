@@ -5,9 +5,10 @@ import { Modal } from '../../context/Modal';
 
 import { getBusinesses, getBusinessDetails } from '../../store/business';
 import EditBusinessForm from '../EditBusiness';
+import './BusinessDetails.css'
 
-function BusinessDetails(){
-  const {businessId} = useParams();
+function BusinessDetails() {
+  const { businessId } = useParams();
   const [showEditBusiness, setShowEditBusiness] = useState(false);
   const dispatch = useDispatch();
   const sessionUser = useSelector(state => state.session.user?.id);
@@ -19,12 +20,13 @@ function BusinessDetails(){
 
   useEffect(() => {
     dispatch(getBusinessDetails(businessId))
-  },[businessId])
+  }, [businessId])
 
 
-  return(
+  return (
     <div className="business-details">
       <div>
+        <div className="pad"></div>
         <h1>{business?.title}</h1>
         <p>{business?.description}</p>
         <p>{business?.address}</p>
@@ -35,7 +37,7 @@ function BusinessDetails(){
       <div>
         {showEditBusiness && (
           <Modal className='editModal' onClose={() => setShowEditBusiness(false)}>
-            <EditBusinessForm setShowEditBusiness={setShowEditBusiness} id={business?.id}/>
+            <EditBusinessForm setShowEditBusiness={setShowEditBusiness} id={business?.id} />
           </Modal>
         )}
         <button
