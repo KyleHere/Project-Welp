@@ -1,5 +1,26 @@
-.pad{
-  height: 200px;
+.business-details{
+  height: 90px;
   width: 100%;
   padding: 100px;
+  background-color: white
+}
+
+.business-container{
+  background-color: red;
+}
+
+.buisness-box{
+  background-color: blue;
+}
+
+.address-box{
+  width: 300px;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+.address-navlink{
+  font-size: 20px;
+
+  text-decoration: none;
 }

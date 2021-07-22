@@ -32,27 +32,28 @@ module.exports = (sequelize, DataTypes) => {
       },
     },
   },
-  {
-    defaultScope: {
-      attributes: {
-        exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
+    {
+      defaultScope: {
+        attributes: {
+          exclude: ['hashedPassword', 'email', 'createdAt', 'updatedAt'],
+        },
       },
-    },
-    scopes: {
-      currentUser: {
-        attributes: { exclude: ['hashedPassword'] },
+      scopes: {
+        currentUser: {
+          attributes: { exclude: ['hashedPassword'] },
+        },
+        loginUser: {
+          attributes: {},
+        },
       },
-      loginUser: {
-        attributes: {},
-      },
-    },
-  });
-  User.associate = function(models) {
-    // associations can be defined here
+    });
+  User.associate = function (models) {
+    User.hasMany(models.Review, { foreignKey: 'userId' })
+    User.hasMany(models.Business, { foreignKey: 'ownerId' })
   };
 
 
-  User.prototype.toSafeObject = function() {
+  User.prototype.toSafeObject = function () {
     const { id, username, email } = this;
     return { id, username, email };
   };
