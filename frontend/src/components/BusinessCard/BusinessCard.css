@@ -1,0 +1,23 @@
+.businessCardContainer{
+  background-color: lightgrey;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: row;
+  margin: 20px 20px;
+  padding: 20px 20px;
+  /* height: 300px; */
+  width: 100%;
+}
+
+.titleLink{
+  text-decoration: none;
+}
+
+.titleLink:visited {
+  color: blue;
+}
+
+.titleLink:hover {
+  color: green
+}

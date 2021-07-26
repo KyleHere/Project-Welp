@@ -1,0 +1,96 @@
+.business-details{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 115px;
+  width: 350px;
+  /* padding: 100px; */
+  background-color: white;
+  border: 2px grey solid;
+  border-radius: 7px;
+}
+
+.business-container{
+  /* height: 200px; */
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  top:100px;
+  /* background-color: red; */
+  width: 500px;
+
+}
+
+.buisness-box{
+  background-color: blue;
+}
+
+.address-box{
+  width: 300px;
+  border: 1px solid grey;
+  border-radius: 1px;
+}
+
+.address-navlink{
+  font-size: 20px;
+
+  text-decoration: none;
+}
+
+.review-buttons button{
+  background-color: red;
+  border-radius: 6px;
+  color: white;
+  height: 30px;
+
+}
+
+.photo-buttons button{
+  background-color: white;
+  border-radius: 6px;
+  height: 30px;
+  margin-left: 15px;
+}
+
+.business-buttons{
+  display:flex;
+  padding: 10px;
+}
+
+.location-box{
+  width: 300px;
+  background-color: white;
+  border: 2px grey solid;
+  border-radius: 10px;
+}
+
+.reviews-container{
+  width: 800px;
+  background-color: white;
+  height: 300px;
+  border: 2px grey solid;
+  border-radius: 10px;
+}
+
+.recommended-reviews{
+  text-decoration: underline;
+}
+
+.edit-button-div button{
+  background-color: white;
+  border: 1px grey solid;
+  border-radius: 6px;
+  height: 20px;
+
+}
+
+.spacer{
+  height:20px;
+}
+
+.business-card{
+  display: flex;
+
+}

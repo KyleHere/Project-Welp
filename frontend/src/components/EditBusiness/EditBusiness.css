@@ -1,0 +1,38 @@
+
+.businessForm{
+  width: 500px;
+  background-color: lightgray;
+}
+
+.newBusinessForm{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+}
+
+.deleteButton{
+  width: 150px;
+  border: 1px white solid;
+  background: red;
+  border-radius: 5px;
+  color: white
+}
+
+.newBusinessButton{
+  border: 1px white solid;
+  background: green;
+  color: white;
+  border-radius: 5px;
+}
+
+.formInput{
+  padding: 5px;
+  margin: 5px;
+}
+
+.formHeader{
+  display: flex;
+
+}
